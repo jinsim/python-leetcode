@@ -39,6 +39,10 @@ class Solution:
     """ itertools 모듈 사용
     itertools 모듈은 반복자 생성에 최적화된 효율적인 기능들을 제공한다. 실무에서 사용하지 않을 이유가 없다.
     이미 잘 구현된 라이브러리라 버그 발생 가능성도 낮고, 효율적으로 설계된 C 라이브러리라 속도에도 이점이 있다.
+
+    파이썬으로 아무리 효율적인 알고리즘을 작성한다 해도, 이보더 다 빨리 실행되기는 힘들다. 
+    한가지 단점은, permutations()가 튜플을 반환하여, 리스트 내의 튜플이 결과로 나오는 것이다. 
+    list(map(list, itertools.permutations(nums))) 으로 해결 가능하다.
     """
     def permute_2(self, nums: List[int]) -> List[List[int]]:
         return list(itertools.permutations(nums))

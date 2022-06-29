@@ -7,7 +7,7 @@ Your input
 Output
 [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 """
-
+import itertools
 class Solution:
     """ DFS를 활용한 순열 생성
     dfs를 중첩 함수로 선언하여 인자로 받은 문자열이 없으면 백트래킹을 한다.
@@ -35,3 +35,10 @@ class Solution:
         
         dfs(nums)
         return results
+    
+    """ itertools 모듈 사용
+    itertools 모듈은 반복자 생성에 최적화된 효율적인 기능들을 제공한다. 실무에서 사용하지 않을 이유가 없다.
+    이미 잘 구현된 라이브러리라 버그 발생 가능성도 낮고, 효율적으로 설계된 C 라이브러리라 속도에도 이점이 있다.
+    """
+    def permute_2(self, nums: List[int]) -> List[List[int]]:
+        return list(itertools.permutations(nums))

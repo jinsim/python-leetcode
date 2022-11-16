@@ -5,6 +5,7 @@ Input: head = [4,2,1,3]
 Output: [1,2,3,4]
 """
 
+# 1) 병합 정렬을 이용한 풀이
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         if l1 and l2:
@@ -28,3 +29,24 @@ class Solution:
         l2 = self.sortList(slow)
 
         return self.mergeTwoLists(l1, l2)
+
+# 3) 파이썬 내장 함수를 이용하는 실용적인 방법
+class Solution:
+    def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+
+        # 연결 리스트 -> 파이썬 리스트
+        p = head
+        lst: list = []
+        while p:
+            lst.append(p.val)
+            p = p.next
+
+        # 정렬
+        lst.sort()
+
+        # 파이썬 리스트 -> 연결 리스트
+        p = head
+        for i in range(len(lst)):
+            p.val = lst[i]
+            p = p.next
+        return head

@@ -5,10 +5,8 @@ Input: root = [3,9,20,null,null,15,7]
 Output: 3
 """
 
-# Definition for a binary tree node.
 import collections
-
-
+# Definition for a binary tree node.
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val

@@ -5,13 +5,14 @@ Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
 Output: 6
 Explanation: The subarray [4,-1,2,1] has the largest sum 6.
 """
-
 class Solution:
+    #1 메모이제이션
     def maxSubArray(self, nums: List[int]) -> int:
         for i in range(1, len(nums)):
             nums[i] += (nums[i - 1] if nums[i - 1] > 0 else 0)
         return (max(nums))
 
+    #2 카데인 알고리즘
     def maxSubArray(self, nums: List[int]) -> int:
         best_sum = -sys.maxsize
         current_sum = 0
